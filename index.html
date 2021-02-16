@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        width: 100%;
+        margin: 0;
+      }
+      .login {
+        height: 15vw;
+        width: 20vw;
+        background-color: rgb(75, 103, 230);
+        margin: 10vw 0 0 40vw;
+        border-radius: 5%;
+      }
+      #form {
+        display: flex;
+        flex-direction: column;
+      }
+      button,
+      #input {
+        padding: 4%;
+        margin: 10%;
+        border: none;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+    </style>
+    <title></title>
+
+    <script>
+      function handleSubmit() {
+        var userName = document.forms["form"]["userName"].value;
+        if (userName.length < 2) {
+          //window.location.href = "http://localhost:3000/chat";
+          alert("Please enter a username to continue");
+          return false;
+        }
+      }
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <div class="login">
+      <form
+        id="form"
+        action="http://localhost:3000/chat"
+        onsubmit="return handleSubmit()"
+      >
+        <input
+          type="text"
+          placeholder="Enter a username "
+          id="input"
+          name="userName"
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
